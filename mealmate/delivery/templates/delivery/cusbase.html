@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery App</title>
+    <style>
+        nav {
+            background-color: #333;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            background-color: #555;
+            border-radius: 5px;
+        } 
+        
+        .nav-links a:hover {
+            background-color: #777;     
+        }
+        
+        nav h2 a {
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+
+        nav h2 a:hover {
+            color: #9b7529;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <h2><a href="{% url 'delivery:index' %}">Food Delivery</a></h2>
+        <div class="nav-links">
+            <li><a href="{% url 'delivery:cusdisplay_res' username %}">View Restaurants</a></li>
+            <li><a href="{% url 'delivery:sign_in' %}">Sign In</a></li>
+            <li><a href="{% url 'delivery:sign_up' %}">Sign Up</a></li>
+        </div>
+    </nav>
+    <br />
+    <div>
+        {% block content %}
+  
+        {% endblock %}
+    </div>
+</body>
+</html>
